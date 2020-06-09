@@ -45,6 +45,11 @@ export interface VideoChatInterface {
    * @param meetingId unique meeting id
    */
   stopMeeting(meetingId: string): Promise<void>;
+  /**
+   * @function setUploadTarget set the upload target
+   * @param config of type @interface S3TargetOptions or @interface AzureTargetOptions
+   */
+  setUploadTarget(config: S3TargetOptions & AzureTargetOptions): Promise<void>;
 }
 
 /**

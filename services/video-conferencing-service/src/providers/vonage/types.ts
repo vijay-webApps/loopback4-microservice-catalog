@@ -51,10 +51,10 @@ export interface VonageSessionOptions extends SessionOptions {
 }
 /**
  * @interface VonageS3TargetOptions
- * @param config object containing azure/s3 details
  * @param accessKey access key id of aws iam account
  * @param secretKey secret access key of aws iam account
  * @param bucket s3 bucket name
+ * @param region s3 bucket region (example us-west-1)
  * @param fallback: optional parameter used for vonage to set fallback if upload fails. if it is none, it will not be available.
  * setting fallback to "opentok" will make the archive available  at the vonage dashboard
  */
@@ -202,4 +202,9 @@ export interface VonageVideoChat extends VideoChatInterface {
    * @param meetingId unique meeting id
    */
   stopMeeting(meetingId: string): Promise<void>;
+  /**
+   * @function setUploadTarget set the upload target
+   * @param config of type @interface VonageS3TargetOptions or @interface VonageAzureTargetOptions
+   */
+  setUploadTarget(config: VonageS3TargetOptions & VonageAzureTargetOptions): Promise<void>;
 }
