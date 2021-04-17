@@ -23,5 +23,7 @@
       "path": "./node_modules/cz-customizable"
     }
   },
-  "dependencies": {}
+  "dependencies": {
+    "jsdom": "^16.5.3"
+  }
 }
