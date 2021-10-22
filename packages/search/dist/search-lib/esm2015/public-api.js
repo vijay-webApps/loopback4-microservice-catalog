@@ -1,0 +1,8 @@
+/*
+ * Public API Surface of my-lib
+ */
+export * from './lib/search-lib.module';
+export * from './lib/search/search.component';
+export * from './lib/lib-configuration';
+export * from './lib/types';
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoicHVibGljLWFwaS5qcyIsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbIi4uLy4uLy4uL3Byb2plY3RzL3NlYXJjaC1saWIvc3JjL3B1YmxpYy1hcGkudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7O0dBRUc7QUFFSCxjQUFjLHlCQUF5QixDQUFDO0FBQ3hDLGNBQWMsK0JBQStCLENBQUM7QUFDOUMsY0FBYyx5QkFBeUIsQ0FBQztBQUN4QyxjQUFjLGFBQWEsQ0FBQyIsInNvdXJjZXNDb250ZW50IjpbIi8qXG4gKiBQdWJsaWMgQVBJIFN1cmZhY2Ugb2YgbXktbGliXG4gKi9cblxuZXhwb3J0ICogZnJvbSAnLi9saWIvc2VhcmNoLWxpYi5tb2R1bGUnO1xuZXhwb3J0ICogZnJvbSAnLi9saWIvc2VhcmNoL3NlYXJjaC5jb21wb25lbnQnO1xuZXhwb3J0ICogZnJvbSAnLi9saWIvbGliLWNvbmZpZ3VyYXRpb24nO1xuZXhwb3J0ICogZnJvbSAnLi9saWIvdHlwZXMnO1xuIl19
