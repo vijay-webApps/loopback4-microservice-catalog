@@ -7,27 +7,11 @@ import {
   RestExplorerComponent,
 } from '@loopback/rest-explorer';
 import {ServiceMixin} from '@loopback/service-proxy';
-import {Configuration, Provider} from 'oidc-provider';
+import {AuthenticationComponent, Strategies} from 'loopback4-authentication';
 import path from 'path';
+import {LocalPasswordVerifyProvider} from './providers/localPasswordVerify.provider';
 import {MySequence} from './sequence';
 
-const config: Configuration = {
-  cookies: {
-    keys: ['test'],
-  },
-  clients: [
-    {
-      client_id: 'foo',
-      redirect_uris: ['https://jwt.io'],
-      response_types: ['id_token'],
-      grant_types: ['implicit'],
-      token_endpoint_auth_method: 'none',
-      // ... other client properties
-    },
-  ],
-  scopes: ['api'],
-};
-const oidc = new Provider('http://localhost:3000', config);
 export {ApplicationConfig};
 
 export class TestOidcApplication extends BootMixin(
@@ -47,7 +31,11 @@ export class TestOidcApplication extends BootMixin(
       path: '/explorer',
     });
     this.component(RestExplorerComponent);
-    this.expressMiddleware('middleware.oidc', oidc.callback());
+    this.component(AuthenticationComponent);
+
+    this.bind(Strategies.Passport.LOCAL_PASSWORD_VERIFIER).toProvider(
+      LocalPasswordVerifyProvider,
+    );
 
     this.projectRoot = __dirname;
     // Customize @loopback/boot Booter Conventions here
